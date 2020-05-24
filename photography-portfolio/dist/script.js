@@ -5,10 +5,11 @@ sr.reveal("img", {
   origin: "bottom",
   mobile: true
 });
+//Focus on image
+
 
 // Sticky Header
 $(window).scroll(function() {
-
   if ($(window).scrollTop() > 100) {
       $('.main_h').addClass('sticky');
   } else {
@@ -42,3 +43,15 @@ $('nav a').click(function(event) {
   }, 500);
   event.preventDefault();
 });
+
+$('.grid-container a').click(function(event){
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    event.preventDefault();
+    } else {
+        event.preventDefault();
+        $('[data-toggle="lightbox"]').click(function(event) {
+          event.preventDefault();
+          $(this).ekkoLightbox();
+        });
+    }
+});	
